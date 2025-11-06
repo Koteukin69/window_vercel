@@ -1,0 +1,22 @@
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+
+    * {
+        cursor: pointer;
+    }
+
+    *:active {
+        background-color: #545050;
+    }
+
+    *:hover {
+        text-decoration: underline;
+    }
+
+    *:focus-visible {
+        outline: 1px solid var(--foreground);
+        outline-offset: -1px;
+    }
+}

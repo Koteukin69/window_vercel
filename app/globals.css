@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+:root {
+  --background: #1B1919;
+  --foreground: #fff;
+  
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  display: flex;
+}
+
+.scrollbar {
+    padding-right: 3px;
+    scroll-behavior: smooth;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background-color: #D9D9D91A;
+  border-radius: 0;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: #d9d9d9;
+  border-radius: 0;
+}

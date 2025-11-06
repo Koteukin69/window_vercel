@@ -1,0 +1,25 @@
+.button {
+    display: block;
+    text-align: center;
+    padding: 3.5px;
+    width: 100%;
+    font-weight: 700;
+    font-size: 18px;
+    outline: 2px solid var(--foreground);
+    color: var(--foreground);
+    outline-offset: -2px;
+    cursor: pointer;
+
+    &:active {
+        background-color: #545050;
+    }
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    &:focus {
+        outline: 4px double var(--foreground);
+        outline-offset: -4px;
+    }
+}

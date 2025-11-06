@@ -1,0 +1,10 @@
+.card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 103px;
+}
+
+.image {
+    height: 100%;
+    aspect-ratio: 2;
+}
