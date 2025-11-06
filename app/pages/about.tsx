@@ -8,7 +8,7 @@ export default function About() {
             <Data data={[
                 {
                     type: "bgMusic",
-                    src: undefined,
+                    src: "/greatest.mp4",
                     width: 200
                 },
                 {
@@ -49,3 +49,4 @@ export default function About() {
             ]} />
         </div>)
 }
+
