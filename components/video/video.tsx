@@ -1,6 +1,7 @@
 "use client";
 
 import { useSearchParams } from 'next/navigation'
+import { useState, useEffect } from 'react'
 
 import { Oswald } from "next/font/google";
 
@@ -9,21 +10,37 @@ const oswald = Oswald({
     weight: "700"
 });
 
+function getVideoData() {
+
+
+    return { poster:"/abc", src:{mp4:"/abc"}}
+}
+
 export default function Video({ width=711, height=386 }: { width?: number, height?: number }) {
     const searchParams = useSearchParams();
-    const params = ['city', 'time_of_day'].map((param) => (searchParams.get(param) || undefined));
-
-    const content = params.includes(undefined) ? undefined : {
-        poster: "https://i.ytimg.com/vi/LLFhKaqnWwk/maxresdefault.jpg",
-        src: {
-            mp4: "https://ia801509.us.archive.org/10/items/Rick_Astley_Never_Gonna_Give_You_Up/Rick_Astley_Never_Gonna_Give_You_Up.mp4"
-        }
+    const data = {
+        city: searchParams.get('city'),
+        time_of_day: searchParams.get('time_of_day')
     }
 
-    return (content) ? (
-        <video style={{width, height}} className='object-cover' width={width} height={height} muted loop controls poster={ content.poster } >
-            {Object.keys(content.src).map((key) => (
-                <source src={ content.src[key as keyof typeof content.src] } type={`video/${key}`} key={key} />
+    const [content, setContent] = useState(undefined)
+    const [isLoading, setLoading] = useState(true)
+
+    useEffect(() => {
+        if (isLoading && data.city && data.time_of_day && ["morning", "day", "night"].includes(data.time_of_day))
+            fetch('/api/videos', {method: "POST", body: JSON.stringify(data),headers: {"Content-Type": "application/json" }, })
+                .then((res) => res.json())
+                .then((data) => {
+                    setContent(data)
+                    setLoading(false)
+                }
+            )
+    }, [])
+
+    return (content && content["src"]) ? (
+        <video style={{width, height}} className='object-cover' width={width} height={height} muted loop controls poster={ content["poster"] } >
+            {Object.keys(content["src"]).map((key) => (
+                <source src={ content["src"][key as keyof typeof content["src"]] } type={`video/${key}`} key={key} />
             ))}
             Your browser does not support the video tag.
         </video>
