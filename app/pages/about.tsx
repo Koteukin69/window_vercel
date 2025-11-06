@@ -7,6 +7,11 @@ export default function About() {
         <div className="w-full h-screen flex items-center justify-center">
             <Data data={[
                 {
+                    type: "component",
+                    component: <Button text="< Back" type="link" href="/" />,
+                    width: 200
+                },
+                {
                     type: "bgMusic",
                     src: "/lonely.mp4",
                     width: 200
@@ -40,11 +45,6 @@ export default function About() {
                 {
                     type: "text",
                     text: text
-                },
-                {
-                    type: "component",
-                    component: <Button text="< Back" type="link" href="/" />,
-                    width: 200
                 },
             ]} />
         </div>)
