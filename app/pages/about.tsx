@@ -14,7 +14,7 @@ export default function About() {
                 {
                     type: "bgMusic",
                     src: "/lonely.mp4",
-                    width: 200
+                    width: 300
                 },
                 {
                     type: "title",
