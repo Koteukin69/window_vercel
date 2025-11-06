@@ -13,7 +13,7 @@ export default function About() {
                 },
                 {
                     type: "bgMusic",
-                    src: "/lonely.mp4",
+                    src: "/greatest.mp4",
                     width: 300
                 },
                 {
