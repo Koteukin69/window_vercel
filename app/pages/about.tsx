@@ -8,7 +8,7 @@ export default function About() {
             <Data data={[
                 {
                     type: "bgMusic",
-                    src: "/greatest.mp4",
+                    src: "/lonely.mp4",
                     width: 200
                 },
                 {
