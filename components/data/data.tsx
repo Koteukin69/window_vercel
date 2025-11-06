@@ -11,7 +11,7 @@ export default function Data({data}: {data: {type: "title"|"text"|"component"|"b
                         case "text":
                             return <div key={index} className="text-white text-[20px] mr-[10px]" style={{width: item.width}}>{item.text}</div>
                         case "bgMusic":
-                            return <div key={index} style={{width: item.width}}><BgMusic src={item.src!} /></div>
+                            return <div key={index} style={{width: item.width}}><BgMusic src={item.src} /></div>
                         case "picture":
                             return <div key={index} style={{width: item.width}}><img className="w-full object-cover" src={item.src} alt="picture" /></div>
                         case "component":

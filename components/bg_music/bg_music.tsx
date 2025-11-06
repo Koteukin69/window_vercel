@@ -21,7 +21,7 @@ function toggle(audio:HTMLAudioElement) {
     paused(audio) ? play(audio) : pause(audio);
 }
 
-export default function BgMusic({src}: {src: string}) {
+export default function BgMusic({src}: {src?: string}) {
     useEffect(() => {
         audio = document.getElementById("bg_music") as HTMLAudioElement;
     }, []);
