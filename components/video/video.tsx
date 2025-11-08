@@ -10,12 +10,6 @@ const oswald = Oswald({
     weight: "700"
 });
 
-function getVideoData() {
-
-
-    return { poster:"/abc", src:{mp4:"/abc"}}
-}
-
 export default function Video({ width=711, height=386 }: { width?: number, height?: number }) {
     const searchParams = useSearchParams();
     const data = {
