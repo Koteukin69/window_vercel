@@ -9,8 +9,8 @@ export async function POST(request: Request) {
 
     if (json.city == undefined || json.time_of_day == undefined) return Response.json({ error: "Unprocessable Entity" }, { status: 422 })
     
-    const video = videos.find((video) => video.city == json.city && video.time_of_day == json.time_of_day);
-
+    const video = videos.find((video) => video.city.toLowerCase() == json.city.toLowerCase() && video.time_of_day == json.time_of_day);
     if (video == undefined) return Response.json({error: "Not Found"}, {status: 404} )
+
     return Response.json(video, {status: 200});
 }

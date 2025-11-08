@@ -36,7 +36,7 @@ export default function Video({ width=711, height=386 }: { width?: number, heigh
             {Object.keys(content["src"]).map((key) => (
                 <source src={ content["src"][key as keyof typeof content["src"]] } type={`video/${key}`} key={key} />
             ))}
-            Your browser does not support the video tag.
+            Your browser doesn't support HTML video.
         </video>
     ) : (
         <div className={`w-full flex items-center justify-center text-[30px] bg-[#545050] uppercase ${oswald.className}`} style={{width, height}}>

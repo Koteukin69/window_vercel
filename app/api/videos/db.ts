@@ -1,4 +1,4 @@
-const videos = [
+export default [
     {
         city: "Белгород",
         time_of_day: "night",
@@ -45,5 +45,3 @@ const videos = [
         description: "Москва днём"
     }
 ]
-
-export default videos;
