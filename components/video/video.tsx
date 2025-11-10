@@ -23,7 +23,7 @@ export default function Video({ width=711, height=386 }: { width?: number, heigh
     const [isLoading, setLoading] = useState(true)
 
     useEffect(() => {
-        if (isLoading && data.city && data.time_of_day && ["morning", "day", "night"].includes(data.time_of_day))
+        if (data.city && data.time_of_day && ["morning", "day", "night"].includes(data.time_of_day))
             fetch('/api/videos', {method: "POST", body: JSON.stringify(data),headers: {"Content-Type": "application/json" }, })
                 .then((res) => res.json())
                 .then((data) => {
@@ -31,6 +31,7 @@ export default function Video({ width=711, height=386 }: { width?: number, heigh
                     setLoading(false)
                 }
             )
+        else setLoading(false)
     }, [])
 
     if (isLoading)
