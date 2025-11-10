@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="ru" suppressHydrationWarning>
       <body className={firaSansCondensed.className}>
         <ThemeProvider attribute="data-theme" defaultTheme="dark" enableSystem>
-          <ToggleTheme width={100} />
+          <ToggleTheme />
           <main className="w-full h-screen">
             {children}
           </main>
