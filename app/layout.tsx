@@ -20,7 +20,9 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body className={firaSansCondensed.className}>
-        {children}
+        <main className="w-full h-screen">
+          {children}
+        </main>
       </body>
     </html>
   );

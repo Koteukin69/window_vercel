@@ -4,6 +4,8 @@ import { useSearchParams } from 'next/navigation'
 import { useState, useEffect } from 'react'
 
 import { Oswald } from "next/font/google";
+import Loading from './loading';
+import NotFound from './notFound';
 
 const oswald = Oswald({
     subsets: ["cyrillic"], 
@@ -31,16 +33,21 @@ export default function Video({ width=711, height=386 }: { width?: number, heigh
             )
     }, [])
 
-    return (content && content["src"]) ? (
-        <video style={{width, height}} className='object-cover' width={width} height={height} muted loop controls poster={ content["poster"] } >
-            {Object.keys(content["src"]).map((key) => (
-                <source src={ content["src"][key as keyof typeof content["src"]] } type={`video/${key}`} key={key} />
+    if (isLoading)
+        return <Loading width={width} height={height}/>
+
+    if (content == undefined || content["src"] == undefined) 
+        return <NotFound width={width} height={height}/>
+    
+    const src = content["src"];
+    const poster = content["poster"];
+
+    return (
+        <video style={{width, height}} className='object-cover' width={width} height={height} muted loop controls poster={ poster } >
+            {Object.keys(src).map((key) => (
+                <source src={ src[key as keyof typeof src] } type={`video/${key}`} key={key} />
             ))}
             Your browser doesn't support HTML video.
         </video>
-    ) : (
-        <div className={`w-full flex items-center justify-center text-[30px] bg-[#545050] uppercase ${oswald.className}`} style={{width, height}}>
-            {"нет подходящих видео =("}
-        </div>
     )
 }

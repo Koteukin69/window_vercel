@@ -1,11 +1,11 @@
 import { neon } from '@neondatabase/serverless';
 
-let videos: [{ city: string; time_of_day: "morning"|"day"|"night"; poster: string; src: { [name: string]: string; }; description: string; }] | undefined;
+let videos: [{ city: string; time_of_day: "morning"|"day"|"night"; poster: string; src: { [key: string]: string; }; description: string; }] | undefined;
 let lastFetch = 0;
 
 async function getVideosTable() {
     const sql = neon(`${process.env.DATABASE_URL}`);
-    return await sql`SELECT * FROM videos;` as [{ city: string; time_of_day: "morning"|"day"|"night"; poster: string; src: { [name: string]: string; }; description: string; }];
+    return await sql`SELECT * FROM videos;` as [{ city: string; time_of_day: "morning"|"day"|"night"; poster: string; src: { [key: string]: string; }; description: string; }];
 }
 
 async function getVideos() {
