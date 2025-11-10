@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import { Fira_Sans_Condensed } from "next/font/google";
+import { ThemeProvider } from "next-themes";
+import ToggleTheme from "@/components/toggle_theme/toggle_theme";
 
 const firaSansCondensed = Fira_Sans_Condensed({
   subsets: ["cyrillic", "latin"],
@@ -18,11 +20,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru">
+    <html lang="ru" suppressHydrationWarning>
       <body className={firaSansCondensed.className}>
-        <main className="w-full h-screen">
-          {children}
-        </main>
+        <ThemeProvider attribute="data-theme" defaultTheme="dark" enableSystem>
+          <ToggleTheme width={100} />
+          <main className="w-full h-screen">
+            {children}
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -1,9 +1,21 @@
 @import "tailwindcss";
 
 :root {
+  --background-contrast: white;
+  --background: #E9E9E9;
+  --background-second: #b6b6b6;
+  --foreground: #000;
+  --foreground-second: #5d5959;
+  --theme-color: #FFE043;
+}
+
+[data-theme='dark'] {
+  --background-contrast: black;
   --background: #1B1919;
+  --background-second: #545050;
   --foreground: #fff;
-  
+  --foreground-second: #858181;
+  --theme-color: #185d5a;
 }
 
 body {

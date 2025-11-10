@@ -7,7 +7,7 @@ const oswald = Oswald({
 
 export default function NotFound({ width, height }: { width?: number, height?: number }) {
     return (
-        <div className={`w-full flex items-center justify-center text-[30px] bg-[#545050] uppercase ${oswald.className}`} style={{width, height}} id="loading">
+        <div className={`w-full flex items-center justify-center text-[30px] bg-(--background-second) uppercase ${oswald.className}`} style={{width, height}} id="loading">
             {"нет подходящих видео =("}
         </div>
     )

@@ -3,14 +3,8 @@
 import { useSearchParams } from 'next/navigation'
 import { useState, useEffect } from 'react'
 
-import { Oswald } from "next/font/google";
 import Loading from './loading';
 import NotFound from './notFound';
-
-const oswald = Oswald({
-    subsets: ["cyrillic"], 
-    weight: "700"
-});
 
 export default function Video({ width=711, height=386 }: { width?: number, height?: number }) {
     const searchParams = useSearchParams();
