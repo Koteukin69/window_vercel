@@ -11,13 +11,13 @@ const oswald = Oswald({
 export default function Loading({ width, height }: { width?: number, height?: number }) {
     const [dots, setDots] = useState(0);
 
-    useEffect(
-        () => {
-            setInterval(() => {
-                setDots(dots < 3 ? dots + 1 : 1)
-            }, 200);
-        }
-    );
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            setDots(dots < 3 ? dots + 1 : 1);
+        }, 500);
+
+        return () => clearInterval(timeout);
+    }, [dots]);
 
     return (
         <div className={`w-full flex items-center justify-center text-[30px] bg-[#545050] uppercase ${oswald.className}`} style={{width, height}} id="loading">
