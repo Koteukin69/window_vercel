@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
-
 import { Fira_Sans_Condensed } from "next/font/google";
 import { ThemeProvider } from "next-themes";
-import ToggleTheme from "@/components/toggle_theme/toggle_theme";
+
+import { ToggleTheme, Back } from "@/components";
 
 const firaSansCondensed = Fira_Sans_Condensed({
   subsets: ["cyrillic", "latin"],
@@ -21,10 +21,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" suppressHydrationWarning>
+      <head>
+        <meta name="description" content="Большая библиотека видео из разных городов России" />
+      </head>
       <body className={firaSansCondensed.className}>
         <ThemeProvider attribute="data-theme" defaultTheme="dark" enableSystem>
+          <Back />  
           <ToggleTheme />
-          <main className="w-full h-screen">
+          <main className="w-full h-screen flex justify-center items-center">
             {children}
           </main>
         </ThemeProvider>

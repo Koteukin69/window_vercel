@@ -8,7 +8,7 @@
     }
 
     *:active {
-        background-color: #545050;
+        background-color: var(--active-background);
     }
 
     *:hover {

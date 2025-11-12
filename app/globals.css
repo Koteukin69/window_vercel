@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Tailwind v4: используем data-атрибут для dark-вариантов */
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
 :root {
   --background-contrast: white;
   --background: #E9E9E9;
@@ -7,6 +10,9 @@
   --foreground: #000;
   --foreground-second: #5d5959;
   --theme-color: #FFE043;
+  --scrollbar-track-color: #2727271a;
+  --scrillbar-color: #272727;
+  --active-background: #b8b0b0;
 }
 
 [data-theme='dark'] {
@@ -16,6 +22,9 @@
   --foreground: #fff;
   --foreground-second: #858181;
   --theme-color: #185d5a;
+  --scrollbar-track-color: #d9d9d91A;
+  --scrillbar-color: #d9d9d9;
+  --active-background: #545050;
 }
 
 body {
@@ -34,11 +43,11 @@ body {
 }
 
 .scrollbar::-webkit-scrollbar-track {
-  background-color: #D9D9D91A;
+  background-color: var(--scrollbar-track-color);
   border-radius: 0;
 }
 
 .scrollbar::-webkit-scrollbar-thumb {
-  background-color: #d9d9d9;
+  background-color: var(--scrillbar-color);
   border-radius: 0;
 }

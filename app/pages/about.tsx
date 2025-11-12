@@ -4,49 +4,43 @@ const text = "Lorea ipsum dolor sit amet, consectetur adipiscing elit. Mauris eg
 
 export default function About() {
     return (
-        <div className="w-full h-screen flex items-center justify-center">
-            <Data data={[
-                {
-                    type: "component",
-                    component: <Button text="< Back" type="link" href="/" />,
-                    width: 200
-                },
-                {
-                    type: "bgMusic",
-                    src: "/lonely.mp4",
-                    width: 300
-                },
-                {
-                    type: "title",
-                    text: "О нас"
-                },
-                {
-                    type: "text",
-                    text: text
-                },
-                {
-                    type: "text",
-                    text: text.repeat(2)
-                },
-                {
-                    type: "title",
-                    text: "Подробнее"
-                },
-                {
-                    type: "text",
-                    text: text,
-                    width: "75%"
-                },
-                {
-                    type: "picture",
-                    src: "https://img.freepik.com/free-vector/leadership-reach-business-success-trophy-global-business-companies-corporate-employees-are-always-competing-higher-better-positions-business-concept-goals-success_1150-55454.jpg",
-                    width: "75%"
-                },
-                {
-                    type: "text",
-                    text: text
-                },
-            ]} />
-        </div>)
+        <Data data={[
+            {
+                type: "bgMusic",
+                src: "/lonely.mp4",
+                width: 300
+            },
+            {
+                type: "title",
+                text: "О нас"
+            },
+            {
+                type: "text",
+                text: text
+            },
+            {
+                type: "text",
+                text: text.repeat(2)
+            },
+            {
+                type: "title",
+                text: "Подробнее"
+            },
+            {
+                type: "text",
+                text: text,
+                width: "75%"
+            },
+            {
+                type: "picture",
+                src: "https://img.freepik.com/free-vector/leadership-reach-business-success-trophy-global-business-companies-corporate-employees-are-always-competing-higher-better-positions-business-concept-goals-success_1150-55454.jpg",
+                width: "75%"
+            },
+            {
+                type: "text",
+                text: text
+            },
+        ]} />
+    )
 }
 

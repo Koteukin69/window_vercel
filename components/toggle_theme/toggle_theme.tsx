@@ -5,9 +5,13 @@ import styles from './toggle_theme.module.css';
 
 export default function ToggleTheme() {
     const { theme, setTheme } = useTheme();
-    return <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} className={`w-[100px] aspect-2/1 fixed top-[60px] right-[60px] rounded-full outline-3 outline-(--background-second) -outline-offset-2 flex flex-row items-center shadow-[0_4px_4px_rgba(0,0,0,.25)]`} >
-        <div className={`${styles.knob} rounded-full`}>
-            <div className="aspect-square w-[40px] h-[40px] overflow-hidden rounded-full relative"></div>
+    return <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} className={`fixed top-[60px] right-[100px] rounded-full flex gap-2.5`} >
+        Light
+        <div className='rounded-full w-[50px] aspect-2/1 bg-[#4169E1]'>
+            <div className={`${styles.knob} rounded-full relative h-full w-1/2 flex items-center justify-center dark:transform-[translateX(100%)] transition-transform duration-200`}>
+                <div className="w-[19px] aspect-square rounded-full bg-white"></div>
+            </div>
         </div>
+        Dark
     </button>
 }
