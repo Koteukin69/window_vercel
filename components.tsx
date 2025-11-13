@@ -7,7 +7,6 @@ export { default as Video } from "@/components/video/video";
 export { default as SearchForm } from "@/components/search_form/search_form";
 export { default as CardList } from "@/components/card_list/card_list";
 export { default as Details } from "@/components/details/details";
-export { default as LoginForm } from "@/components/login_form/login_form";
 export { default as Checkbox } from "@/components/checkbox/checkbox";
 export { default as BgMusic } from "@/components/bg_music/bg_music";
 export { default as Data } from "@/components/data/data";

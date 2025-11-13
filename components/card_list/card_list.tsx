@@ -22,20 +22,22 @@ export default function CardList() {
 
     if (isLoading) return <></>
 
-    return (<>
-        <div className={styles.cards}>
-            {cards.slice(0, showed).map((card, i) => (
-                <Card key={i} src={card["poster"]} name={card["city"]} description={card["description"]} time_of_day={card["time_of_day"]} />            
-            ))}
-        </div>
-        <Button text="Показать ещё" type="button" id="show" action={() => {
-            const toShow = showed + 3
-            setShowed(toShow)
-            if (toShow < cards.length) return;
-            
-            const button = document.getElementById("show");
-            if (button) button.style.display = "none";
+    return (
+        <div className={"flex gap-[30px] flex-col w-[399px] h-auto overflow-y-auto scrollbar"}>
+            <div className="flex gap-[30px] flex-col">
+                {cards.slice(0, showed).map((card, i) => (
+                    <Card key={i} src={card["poster"]} name={card["city"]} description={card["description"]} time_of_day={card["time_of_day"]} />            
+                ))}
+            </div>
+            <Button text="Показать ещё" type="button" id="show" action={() => {
+                const toShow = showed + 3
+                setShowed(toShow)
+                if (toShow < cards.length) return;
+                
+                const button = document.getElementById("show");
+                if (button) button.style.display = "none";
 
-        }}/>
-    </>)
+            }}/>
+        </div>
+    )
 }

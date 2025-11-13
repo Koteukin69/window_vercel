@@ -10,5 +10,5 @@ export default function Back() {
         setDisplay((window.location.pathname == "/") ? "none" : "block");
     }, []);
 
-    return <a href="./.." className="absolute left-[100px] top-[60px] text-[24px] font-bold" style={{display}}>{"< Back"}</a>
+    return <a href="/" className="absolute left-[100px] top-[60px] text-[24px] font-bold" style={{display}}>{"< Back"}</a>
 }
