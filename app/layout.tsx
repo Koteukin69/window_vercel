@@ -26,15 +26,19 @@ export default function RootLayout({
       <head>
         <meta name="description" content="Большая библиотека видео из разных городов России" />
       </head>
-      <body className={firaSansCondensed.className}><StackProvider app={stackClientApp}><StackTheme>
-        <ThemeProvider attribute="data-theme" defaultTheme="dark" enableSystem>
-          <Back />  
-          <ToggleTheme />
-          <main className="w-full h-screen flex justify-center items-center">
-            {children}
-          </main>
-        </ThemeProvider>
-      </StackTheme></StackProvider></body>
+      <body className={firaSansCondensed.className}>
+        <StackProvider app={stackClientApp}>
+          <StackTheme>
+            <ThemeProvider attribute="data-theme" defaultTheme="dark" enableSystem>
+              <Back />  
+              <ToggleTheme />
+              <main className="w-full h-screen flex justify-center items-center">
+                {children}
+              </main>
+            </ThemeProvider>
+          </StackTheme>
+        </StackProvider>
+      </body>
     </html>
   );
 }
