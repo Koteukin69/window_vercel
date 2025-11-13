@@ -1,16 +1,15 @@
-import { auth } from "@/auth"
 import { redirect } from "next/navigation";
 
 export default async function Profile() {
-    const session = await auth();
-    const user = session?.user;
+    const user = {name: "Test", email: "test@email.com"};
 
     if (!user) redirect('/login')
 
     return (
         <div>
             <h1>Profile</h1>
-            <div>{user.email}</div>
+            <div>{`Name: ${user.name}`}</div>
+            <div>{`Email: ${user.email}`}</div>
         </div>
     )
 }
