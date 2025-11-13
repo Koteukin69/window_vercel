@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import { StackProvider, StackTheme } from "@stackframe/stack";
-import { stackClientApp } from "../stack/client";
 import "./globals.css";
 import { Fira_Sans_Condensed } from "next/font/google";
 import { ThemeProvider } from "next-themes";
@@ -27,17 +25,13 @@ export default function RootLayout({
         <meta name="description" content="Большая библиотека видео из разных городов России" />
       </head>
       <body className={firaSansCondensed.className}>
-        <StackProvider app={stackClientApp}>
-          <StackTheme>
-            <ThemeProvider attribute="data-theme" defaultTheme="dark" enableSystem>
-              <Back />  
-              <ToggleTheme />
-              <main className="w-full h-screen flex justify-center items-center">
-                {children}
-              </main>
-            </ThemeProvider>
-          </StackTheme>
-        </StackProvider>
+        <ThemeProvider attribute="data-theme" defaultTheme="dark" enableSystem>
+          <Back />  
+          <ToggleTheme />
+          <main className="w-full h-screen flex justify-center items-center">
+            {children}
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );
