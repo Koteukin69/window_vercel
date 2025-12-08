@@ -1,0 +1,154 @@
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.loading {
+  text-align: center;
+  font-size: 18px;
+  padding: 40px;
+}
+
+.pageTitle {
+  font-family: 'Oswald', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.emptyIcon {
+  color: var(--foreground-second);
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+
+.emptyTitle {
+  font-family: 'Oswald', sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.emptyText {
+  font-size: 16px;
+  color: var(--foreground-second);
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+.homeLink {
+  display: inline-block;
+  padding: 10px 30px;
+  font-weight: 700;
+  font-size: 18px;
+  outline: 2px solid var(--foreground);
+  color: var(--foreground);
+  outline-offset: -2px;
+  text-decoration: none;
+  transition: background-color 0.2s;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:active {
+    background-color: var(--active-background);
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  position: relative;
+  border: 2px solid var(--foreground);
+  overflow: hidden;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.cardContent {
+  cursor: pointer;
+  position: relative;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+
+  .card:hover & {
+    transform: scale(1.05);
+  }
+}
+
+.cardPlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-second);
+  color: var(--foreground-second);
+}
+
+.cardOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 15px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: white;
+}
+
+.cardTitle {
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.cardTime {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.removeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: white;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: rgba(255, 68, 68, 0.8);
+  }
+}

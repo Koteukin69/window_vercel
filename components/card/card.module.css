@@ -1,0 +1,39 @@
+.cardWrapper {
+  position: relative;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 206px;
+  height: 103px;
+  cursor: pointer;
+}
+
+.card:active {
+  background-color: var(--active-background);
+}
+
+.card:hover {
+  text-decoration: underline;
+}
+
+.card:focus-visible {
+  outline: 1px solid var(--foreground);
+  outline-offset: 1px;
+}
+
+.content {
+  height: 100%;
+  padding-right: 10px;
+}
+
+.imageContainer {
+  height: 103px;
+  position: relative;
+}
+
+.favoriteContainer {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+}

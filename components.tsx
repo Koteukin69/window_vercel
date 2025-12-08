@@ -10,7 +10,12 @@ export { default as Details } from "@/components/details/details";
 export { default as Checkbox } from "@/components/checkbox/checkbox";
 export { default as BgMusic } from "@/components/bg_music/bg_music";
 export { default as Data } from "@/components/data/data";
-export { default as Link } from "@/components/link/link"
-export { default as Spinner } from "@/components/spinner/spinner"
-export { default as Back } from "@/components/back/back"
-export { default as ToggleTheme } from "@/components/toggle_theme/toggle_theme"
+export { default as Link } from "@/components/link/link";
+export { default as Spinner } from "@/components/spinner/spinner";
+export { default as Back } from "@/components/back/back";
+export { default as ToggleTheme } from "@/components/toggle_theme/toggle_theme";
+export { default as PasswordInput } from "@/components/password_input/password_input";
+export { default as PasswordStrength } from "@/components/password_strength/password_strength";
+export { default as AuthModal } from "@/components/auth_modal/auth_modal";
+export { default as FavoriteButton } from "@/components/favorite_button/favorite_button";
+export { default as SidebarNav } from "@/components/sidebar_nav/sidebar_nav";

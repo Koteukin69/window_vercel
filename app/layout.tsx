@@ -4,6 +4,9 @@ import { Fira_Sans_Condensed } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 
 import { ToggleTheme, Back } from "@/components";
+import { AuthProvider } from "@/contexts/AuthContext";
+import { FavoritesProvider } from "@/contexts/FavoritesContext";
+import AuthModal from "@/components/auth_modal/auth_modal";
 
 const firaSansCondensed = Fira_Sans_Condensed({
   subsets: ["cyrillic", "latin"],
@@ -26,11 +29,16 @@ export default function RootLayout({
       </head>
       <body className={firaSansCondensed.className}>
         <ThemeProvider attribute="data-theme" defaultTheme="dark" enableSystem>
-          <Back />  
-          <ToggleTheme />
-          <main className="w-full h-screen flex justify-center items-center">
-            {children}
-          </main>
+          <AuthProvider>
+            <FavoritesProvider>
+              <Back />
+              <ToggleTheme />
+              <AuthModal />
+              <main className="w-full h-screen flex justify-center items-center">
+                {children}
+              </main>
+            </FavoritesProvider>
+          </AuthProvider>
         </ThemeProvider>
       </body>
     </html>
